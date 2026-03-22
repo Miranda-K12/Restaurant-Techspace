@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary-color: #fcf840;
+  --primary-hover: #ccc91a;
+  --text-color: #333;
+  --color-light: #fff;
+  --color-dark: rgba(0, 0, 0, 0.925);
+  --font-primary: "Roboto", san-serif;
+  --header-font: 3.6rem;
+  --subheader-font: 3.2rem;
+  --text-size: 1.6rem;
+  --space-small: 1.2rem;
+  --space-medium: 1.6rem;
+  --space-large: 2rem;
+  --space-xl: 2.4rem;
+}
+
+html {
+  font-size: 62.5%;
+  /*10px-1rem */
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-size);
+}
+
+/*header */
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--space-medium);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.hero-logo {
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/*nav-links*/
+.nav-links {
+  display: flex;
+  gap: var(--space-medium);
+}
+
+.nav-a,
+a {
+  color: var(--color-light);
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+}
+
+.nav-a:hover {
+  color: var(--primary-hover);
+  transform: scale(1.2);
+  display: block;
+  font-weight: 600;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-medium);
+}
+
+.mode-toggle {
+  transition: all 0.3s ease-in;
+  font-size: 2rem;
+}
+
+.mode-toggle:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.2);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/*hero section */
+.hero-section {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-section::after {
+  content: " ";
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  color: var(--color-light);
+  font-weight: 600;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-header {
+  font-size: var(--header-font);
+  margin-bottom: var(--space-large);
+}
