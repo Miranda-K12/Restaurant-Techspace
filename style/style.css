@@ -2,19 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --primary-color: #fcf840;
-  --primary-hover: #ccc91a;
+  --primary-color: #ff6600;
+  --primary-hover: #f0660a;
   --text-color: #333;
   --color-light: #fff;
   --color-dark: rgba(0, 0, 0, 0.925);
   --font-primary: "Roboto", san-serif;
-  --header-font: 3.6rem;
-  --subheader-font: 3.2rem;
+  --header-font: 3.8rem;
+  --subheader-font: 3rem;
   --text-size: 1.6rem;
   --space-small: 1.2rem;
   --space-medium: 1.6rem;
   --space-large: 2rem;
-  --space-xl: 2.4rem;
+  --space-xl: 3.2rem;
+  --space-xxl: 7.2rem;
 }
 
 html {
@@ -25,6 +26,33 @@ html {
 body {
   font-family: var(--font-primary);
   font-size: var(--text-size);
+}
+
+.section {
+  max-width: 144rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: var(--space-xxl);
+}
+
+.section-header {
+  font-size: var(--subheader-font);
+  text-align: center;
+  margin-bottom: var(--space-xxl);
+}
+
+.menu-btn {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: var(--space-small) var(--space-medium);
+  border: none;
+  color: var(--color-light);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.menu-btn:hover {
+  background-color: var(--primary-hover);
 }
 
 /*header */
@@ -77,6 +105,7 @@ a {
 .mode-toggle {
   transition: all 0.3s ease-in;
   font-size: 2rem;
+
 }
 
 .mode-toggle:hover {
@@ -115,11 +144,62 @@ a {
 .hero-content {
   color: var(--color-light);
   font-weight: 600;
-  text-align: center;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-large);
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-header {
   font-size: var(--header-font);
-  margin-bottom: var(--space-large);
+}
+
+/*about-section*/
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.about-text {
+  line-height: 1.5;
+  margin-bottom: var(--space-xl);
+}
+
+.name {
+  color: var(--primary-hover);
+  background-color: var(--color-dark);
+  font-weight: 600;
+  padding: 0.3rem;
+  border-radius: 3rem;
+}
+
+.about-section-image,
+.about-img {
+  border-radius: 1rem;
+  width: 100%;
+  transition: all 0.3s ease-in;
+}
+
+.about-img:hover {
+  transform: scale(1.02);
+}
+
+/*footer*/
+footer {
+  padding: var(--space-large);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  margin-top: var(--space-xxl);
+}
+
+.rights-box {
+  text-align: center;
+  transition: all 0.3s ease-in;
+}
+
+.rights-box:hover {
+  color: var(--primary-hover);
 }
