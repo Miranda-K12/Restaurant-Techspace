@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Page</title>
     <link rel="stylesheet" href="./style/reset.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css" />
     <link
       rel="stylesheet"
@@ -109,6 +110,54 @@
       <p class="testimonail-text">So many options to choose from! There’s something new to try every time I order.</p>
                 </div>
 
+  </div>
+</section>
+<section class="book-section section" id="book">
+  <div class="faq">
+    <h3 class="faq-title">Booking FAQs</h3>
+
+<div class="faq-item">
+  <h4 class="faq-questions">How can I book a table at a restaurant?</h4>
+  <p>You can book a table by calling the restaurant directly, using their website, or through reservation apps like OpenTable.</p>
+</div>
+<div class="faq-item">
+  <h4 class="faq-questions">What information is required when making a reservation?</h4>
+  <p>you need to provide your name, contact details, number of guests, date, and time of your visit.</p>
+</div>
+<div class="faq-item">
+  <h4 class="faq-questions">Can I modify or cancel my reservation?</h4>
+  <p>Yes, most restaurants allow modifications or cancellations, but you should do so in advance according to their cancellation policy.</p>
+</div>
+<div class="faq-item">
+  <h4 class="faq-questions">Is it necessary to confirm a reservation?</h4>
+  <p>yes,  require confirmation via phone, SMS, or email to ensure the booking is valid. </p>
+
+  </div>
+  <div class="faq-item">
+  <h4 class="faq-questions">What happens if I arrive late for my reservation?</h4>
+  <p>Restaurants may hold your table for a limited time (usually 10–15 minutes). After that, they may give it to other customers.</p>
+
+</div>
+  </div>
+  <div class="form">
+    <h3 class="faq-title" >Booking Form</h3>
+    <form class="booking-form">
+      <input type="text" name="FullName" placeholder="Enter FullName"  required/>
+      <input type="email" name="email" placeholder="Enter Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+<input type="date" name="date" requered>
+<label>Select Time</label>
+<select class="time-select" required>
+<option value="">Select Time</option>
+<option value="15:00">15:00</option>
+<option value="16:00">16:00</option>
+<option value="17:00">17:00</option>
+<option value="18:00">18:00</option>
+<option value="19:00">19:00</option>
+<option value="20:00">20:00</option>
+</select>
+<button type="submit" class="submit">Book Now</button>
+    </form>
   </div>
 </section>
 </main>
