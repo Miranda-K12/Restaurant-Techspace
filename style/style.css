@@ -113,6 +113,8 @@ a {
 
 }
 
+
+
 .mode-toggle:hover {
   background-color: var(--primary-hover);
   transform: scale(1.2);
@@ -233,7 +235,6 @@ h5 {
 .menu-text {
   text-align: center;
   width: 80%;
-
   margin: 0 auto;
   margin-top: -4rem;
 }
@@ -249,8 +250,6 @@ h5 {
 .card:hover {
   transform: scale(1.02);
 }
-
-
 
 
 .section-header {
