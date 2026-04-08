@@ -43,6 +43,7 @@ body {
 }
 
 .menu-btn,
+.order-button,
 .submit {
   background-color: var(--primary-color);
   border-radius: 1rem;
@@ -56,6 +57,8 @@ body {
 .menu-btn:hover {
   background-color: var(--primary-hover);
 }
+
+
 
 /*header */
 .header {
@@ -119,44 +122,27 @@ a {
   display: none;
 }
 
+
+
 /*hero section */
-.hero-section {
+.hero-section img {
   height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1950&q=80");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  object-fit: cover;
 
 }
 
-.hero-section::after {
-  content: " ";
-  background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.hero-content {
-  color: var(--color-light);
-  font-weight: 600;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-large);
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-header {
+h5 {
   font-size: var(--header-font);
+}
+
+.hero-section p {
+  font-size: var(--card-title);
+  font-weight: 600;
+}
+
+
+.carousel-caption {
+  position: absolute;
 }
 
 /*about-section*/
@@ -234,6 +220,54 @@ a {
 .features-text {
   line-height: 1.5;
   font-size: var(--text-size);
+}
+
+/*menu Section */
+#categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-medium);
+  margin-top: var(--space-xl);
+}
+
+.menu-text {
+  text-align: center;
+  width: 80%;
+
+  margin: 0 auto;
+  margin-top: -4rem;
+}
+
+.card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  padding: var(--space-medium);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+
+
+
+.section-header {
+  font-size: var(--subheader-font);
+  text-align: center;
+  margin-bottom: var(--space-xxl);
+}
+
+.card img {
+  object-fit: cover;
+  margin-bottom: var(--space-medium);
+  border-radius: 1rem;
+}
+
+.price-info {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 /*Testimonail-section */
