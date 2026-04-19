@@ -21,6 +21,7 @@ async function getMenu() {
         <p class="price">Price:<span class="price-info">$${priceInfo[index]}</span></p>
 <button class="order-button">Order Now</button>
         `
+      
       container.appendChild(div);
     })
   }
@@ -44,4 +45,35 @@ document.querySelectorAll('.nav-links a').forEach((link) => {
     navlinks.classList.remove('active');
   });
 });
+
+//dark-light mode
+const modeBtn = document.querySelector('.mode-toggle');
+modeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+const icon = document.querySelector('.dark-light');
+  if (document.body.classList.contains('dark-mode')) {
+    icon.classList.replace('fa-moon', 'fa-sun')
+  }
+  else {
+    icon.classList.replace('fa-sun', 'fa-moon');
+  }
+})
+
+
+//Accordion
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-questions');
+  question.addEventListener('click', () => {
+    if (item.classList.contains('active')) {
+      item.classList.remove('active');
+    } else {
+      faqItems.forEach(p => 
+        p.classList.remove('active'))
+      item.classList.add('active');
+      }
+  })
+})
+
 

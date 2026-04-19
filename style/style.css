@@ -17,6 +17,10 @@
   --space-large: 2rem;
   --space-xl: 3.2rem;
   --space-xxl: 7.2rem;
+  --main-bg: var(var(--color-light));
+  /*თეთრი*/
+  --main-text: var(--color-dark);
+  /*შავი */
 }
 
 html {
@@ -27,7 +31,15 @@ html {
 body {
   font-family: var(--font-primary);
   font-size: var(--text-size);
+  background-color: var(--main-bg);
+  color: var(--main-text);
 }
+
+body.dark-mode {
+  --main-bg: var(--color-dark);
+  --main-text: var(--color-light);
+}
+
 
 .section {
   max-width: 144rem;
@@ -110,10 +122,7 @@ a {
 .mode-toggle {
   transition: all 0.3s ease-in;
   font-size: 2rem;
-
 }
-
-
 
 .mode-toggle:hover {
   background-color: var(--primary-hover);
@@ -123,8 +132,6 @@ a {
 .menu-toggle {
   display: none;
 }
-
-
 
 /*hero section */
 .hero-section img {
@@ -225,6 +232,33 @@ h5 {
 }
 
 /*menu Section */
+
+.menu-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: var(--space-large) 0;
+}
+
+#searchInput,
+#sortSelect {
+  padding: var(--space-small);
+  border: 1px solid var(--primary-color);
+  border-radius: 1rem;
+  font-size: var(--font-primary);
+  outline: none;
+  font-style: italic;
+}
+
+#searchInput:focus,
+#sortSelect:focus {
+  border: 2px solid var(--primary-color);
+}
+
+
+
+
+
 #categories {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -245,6 +279,7 @@ h5 {
   border-radius: 1rem;
   cursor: pointer;
   transition: all 0.2s ease-in;
+
 }
 
 .card:hover {
@@ -262,6 +297,7 @@ h5 {
   object-fit: cover;
   margin-bottom: var(--space-medium);
   border-radius: 1rem;
+
 }
 
 .price-info {
@@ -319,8 +355,6 @@ h5 {
 
 }
 
-
-
 .faq-title {
   font-size: var(--subheader-font);
   text-align: center;
@@ -350,12 +384,30 @@ h5 {
   cursor: pointer;
   font-weight: 600;
   font-size: var(--card-title);
+  position: relative;
+}
+
+.faq-questions:after {
+  content: "+";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.3s ease-in;
+  font-size: var(--card-title);
 }
 
 .faq-item p {
   margin-bottom: var(--space-medium);
   display: none;
   line-height: 1.5;
+}
+
+.faq-item.active .faq-questions:after {
+  transform: rotate(45deg);
+}
+
+.faq-item.active p {
+  display: block;
 }
 
 /*Booking Form*/
@@ -397,6 +449,19 @@ footer {
   background-color: var(--color-dark);
   color: var(--color-light);
   margin-top: var(--space-xxl);
+  font-size: var(--card-title);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-container a:hover,
+.rights-box:hover {
+  color: var(--primary-hover);
+  transform: scale(1.05);
 }
 
 .rights-box {
@@ -404,6 +469,22 @@ footer {
   transition: all 0.3s ease-in;
 }
 
-.rights-box:hover {
+.social-icons {
+  display: flex;
+  gap: var(--space-medium);
+}
+
+.footer-icon {
+  color: var(--color-light);
+  font-size: var(--subheader-font);
+}
+
+.phone-box a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-medium);
+}
+
+.phone-box a:hover i {
   color: var(--primary-hover);
 }
