@@ -1,83 +1,36 @@
+import { addToCart, removeFromCart, getTotalPrice, getCart } from "./cart.js";
 
-
-async function getMenu() {
-
-  // console.log(data)
-
-   
-    filtered.forEach((categories, index) => {
+export function renderMenu(data, priceInfo) {
+  let container = document.getElementById("categories");
+  if (!container) return;
+  container.innerHTML = '';
+  data.forEach((item, index) => {
       let div = document.createElement('div');
       div.className = 'card';
       div.innerHTML =       `
-        <img src="${categories.strCategoryThumb}" alt='food-image'>
-        <h3 class="card-title">${categories.strCategory}</h3>
+        <img src="${item.strCategoryThumb}" alt='food-image'>
+        <h3 class="card-title">${item.strCategory}</h3>
         <p class="price">Price:<span class="price-info">$${priceInfo[index]}</span></p>
 <button class="order-button">Order Now</button>
         `
       let button = div.querySelector('.order-button');
       button.addEventListener("click", ()=> {
-        addToCart(categories.strCategory, priceInfo[index]);
-   
+        addToCart(item.strCategory, priceInfo[index]);
+        renderCart();
+        updateCartCount();
       })
       container.appendChild(div);
     })
-  }
-  catch (error){
-   // console.error("Error");
-  }
-
 }
-getMenu();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//კალათაში დამატება
-
-
-//დასეივება
-
-//update cart count
-function UpdateCartCount() {
-document.querySelector('.cart-count').textContent = cart.length;
-}
-
-//პროდუქტის ფასის ჯამური რაოდენობა
-
   
-function renderCart() {
+
+export function renderCart() {
   const cartItems = document.getElementById('cart-items');
+  if (!cartItems) return;
   cartItems.innerHTML = '';
 
   // li შექმნა
-  cart.forEach((item, index) => {
+  getCart().forEach((item, index) => {
     let li = document.createElement('li');
     li.className = 'cart-item';
     li.innerHTML = `
@@ -88,13 +41,12 @@ function renderCart() {
         <i class="fa-solid fa-rectangle-xmark"></i>
       </button>
     `;
-
-    // წაშლის ფუნქციონალი
-    let btn = li.querySelector('.remove-btn');
-    btn.addEventListener('click', () => {
+    li.querySelector('button').addEventListener('click', () => {
       removeFromCart(index);
-    });
-
+      renderCart();
+      updateCartCount()
+})
+  
     cartItems.appendChild(li);
   });
   let total = document.getElementById('cart-total');
@@ -104,23 +56,9 @@ function renderCart() {
     document.getElementById('cart-modal').appendChild(total);
   }
     total.textContent = 'Total: $' + getTotalPrice().toFixed(2);
-  }
-
-
-  // ელემენტის წაშლა
-
-
-
-UpdateCartCount();
-renderCart();
-
-
-//nav-menu
-
-
-
-
-
-
-
-
+}
+  
+export function updateCartCount(){
+  const el = document.querySelector('.cart-count');
+  if (el) el.textContent = getCart().length; 
+}
